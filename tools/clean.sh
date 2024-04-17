@@ -1,2 +1,2 @@
-rm -rf /tmp/build-py
-rm -rf /tmp/build-kern
+rm -rfv /tmp/build-py
+rm -rfv /tmp/build-kern
