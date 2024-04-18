@@ -1,0 +1,54 @@
+name: BUILD
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up JDK 17
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'adopt'
+          java-version: '17'
+
+      - name: Checkout Action
+        uses: actions/checkout@v3
+
+      - name: Installing Dependencies and Enviroment
+        run: |
+          sudo apt remove openjdk-11-jdk openjdk-11-jre default-jdk default-jre
+          sudo apt install -y python3 python3-pip build-essential libstdc++6 aidl openjdk-17-jdk
+          python -m venv venv
+          source venv/bin/activate
+          pip3 install -r requirements.txt
+
+      - name: Debug Build
+        run: |
+          source venv/bin/activate
+          buildozer android debug
+          mkdir ~/debug-build/
+          mv bin/* ~/debug-build/
+
+      - name: Release Build
+        run: |
+          source venv/bin/activate
+          buildozer android release
+          mkdir ~/release-build/
+          mv bin/* ~/release-build/
+      - name: Debug artifact Upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: Debug
+          path: ~/debug-build/
+      - name: Release artifact Upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: Release
+          path: ~/release-build/
