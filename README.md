@@ -7,12 +7,28 @@ Hello, this is project that tries to make system built on linux kernel that runs
 
 ## How do i install this?
 
-So first thing is an usb
+1. So first thing is an usb
 
 * Preferably 16-32gb+ usb (for future updates)
 * It cannot be sd card (corrupting issues)
 
-Next thing is formatting it and making:
+2. Next thing is formatting it and making:
 
 * 300-500mb "EFI" partition with fat32
 * "ROOTFS" partition with btrfs or ext4 (preferin btrfs)
+
+3. Mount partitions
+
+> I preffer creating new directories at /mnt, like /mnt/rootfs/ and /mnt/efi/, so lets use that:
+
+```bash
+sudo mkdir /mnt/efi /mnt/rootfs
+```
+
+> and then mount em:
+
+```bash
+sudo mount /dev/sdX1 /mnt/efi
+sudo mount /dev/sdX2 /mnt/rootfs
+```
+*DO NOT Forget to change sdX for your drive*
