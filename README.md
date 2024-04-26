@@ -14,7 +14,7 @@ Hello, this is project that tries to make system built on linux kernel that runs
 
 2. Next thing is formatting it and making:
 
-* 300-500mb "EFI" partition with fat32
+> * 300-500mb "EFI" partition with fat32
 * "ROOTFS" partition with btrfs or ext4 (preferin btrfs)
 
 3. Mount partitions
