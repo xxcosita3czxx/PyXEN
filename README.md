@@ -9,8 +9,8 @@ Hello, this is project that tries to make system built on linux kernel that runs
 
 1. So first thing is an usb
 
-* Preferably 16-32gb+ usb (for future updates)
-* It cannot be sd card (corrupting issues)
+> * Preferably 16-32gb+ usb (for future updates)
+> * It cannot be sd card (corrupting issues)
 
 2. Next thing is formatting it and making:
 
@@ -31,4 +31,6 @@ sudo mkdir /mnt/efi /mnt/rootfs
 sudo mount /dev/sdX1 /mnt/efi
 sudo mount /dev/sdX2 /mnt/rootfs
 ```
-*DO NOT Forget to change sdX for your drive*
+**DO NOT Forget to change sdX for your drive**
+
+4. Install the basic system:
