@@ -8,4 +8,4 @@ make -j$(nproc)
 cd /tmp/build-kernel
 mkdir -p initramfs/{bin,etc}
 git clone https://git.busybox.net/busybox
-cd busyox
+cd busybox
