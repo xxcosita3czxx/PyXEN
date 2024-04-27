@@ -1,1 +1,4 @@
-/bin/python3 /boot/boot.py
+export PYTHONPATH="/lib/python/lib/python3.11"
+export PYTHONHOME="/lib/python/lib/python3.11"
+export PYTHONIOENCODING="utf-8" 
+exec /bin/python3.11 /boot/boot.py
