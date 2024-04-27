@@ -5,3 +5,7 @@ tar -xf linux-6.6.28.tar.xz
 cd linux-6.6.28
 wget -O .config https://raw.githubusercontent.com/xxcosita3czxx/PyXEN/main/.config
 make -j$(nproc)
+cd /tmp/build-kernel
+mkdir -p initramfs/{bin,etc}
+git clone https://git.busybox.net/busybox
+cd busyox
