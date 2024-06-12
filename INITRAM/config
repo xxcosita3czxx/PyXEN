@@ -1,0 +1,6 @@
+MODULES="btrfs"
+EARLYHOOKS="udev"
+HOOKS="udev keymap"
+LATEHOOKS=""
+CLEANUPHOOKS="udev"
+EMERGENCYHOOKS=""
