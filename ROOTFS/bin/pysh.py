@@ -16,5 +16,5 @@ while True:
         print("EOF")
     try:
         os.system(inp)
-    except:
+    except Exception:
         print("NOT FOUND")
