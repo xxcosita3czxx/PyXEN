@@ -2,3 +2,4 @@
 name="Shell Start"
 id="shell-start"
 launch="python /bin/pysh.py"
+chdir="/bin"
