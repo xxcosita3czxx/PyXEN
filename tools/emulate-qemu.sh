@@ -1,0 +1,1 @@
+qemu-system-x86_64 -enable-kvm -m 1024 -drive file=/dev/sda -serial stdio -display vnc=:0 -machine type=pc,accel=kvm
