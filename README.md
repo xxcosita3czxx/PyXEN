@@ -16,7 +16,7 @@ Hello, this is project that tries to make system built on linux kernel that runs
 ### 2. Formatting it and Partitioning
 
 > * 300-500mb "EFI" partition with fat32
-> * "ROOTFS" partition with btrfs or ext4 (preferin btrfs)
+> * "ROOTFS" partition with btrfs or ext4 (prefering btrfs)
 
 ### 3. Mount partitions
 
@@ -37,6 +37,6 @@ sudo mount /dev/sdX2 /mnt/rootfs
 
 ### 4. Compile linux kernel
 
-> * Yes pyxen does use linux kernel to boot python (prop gonna make own bootloader and kernel)
+> * Yes pyxen does use linux kernel to boot python (~~prop gonna make own bootloader and kernel~~ (edit: bootloader and kernel deemed impossible to do as there is no low-level implementation of python))
 > * There is script inside tools that compiles kernel and put you in the dir named get-kernel-build.sh
 > * After it is compiled without errors, put it inside /boot/vmlinuz-linux-pyxen and chmod 755 it
